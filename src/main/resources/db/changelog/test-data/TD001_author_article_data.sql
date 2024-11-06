@@ -6,11 +6,11 @@
 -- Insert mock users
 INSERT INTO users (user_guid, username, email, password_hash, first_name, last_name) 
 VALUES
-    ('123e4567-e89b-12d3-a456-426614174000', 'john_doe', 'john@example.com', 
+    ('052da95a-d3d0-4051-8172-cf41bf522430', 'john_doe', 'john@example.com',
      '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewFyBAHOXzxMKf.2', 'John', 'Doe'),
-    ('987fcdeb-51a2-43d8-b741-852552973001', 'jane_smith', 'jane@example.com',
+    ('dc05352a-5ce2-4286-86c8-106e69792c86', 'jane_smith', 'jane@example.com',
      '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewFyBAHOXzxMKf.2', 'Jane', 'Smith'),
-    ('456e789b-12d3-a456-426614174002', 'bob_wilson', 'bob@example.com',
+    ('3ea91b61-6133-4aba-9c77-0bc98802fcee', 'bob_wilson', 'bob@example.com',
      '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewFyBAHOXzxMKf.2', 'Bob', 'Wilson');
 
 -- Insert mock tasks
@@ -41,4 +41,3 @@ VALUES
      CURRENT_TIMESTAMP + INTERVAL '1 day');
 
 --rollback
-
