@@ -7,7 +7,7 @@ DayMapper is an innovative task management application developed by KaizenFlow T
 - Java 21
 - Spring Boot
 - Gradle (for build management)
-- PostgreSQL 8
+- PostgreSQL 14
 
 ## Prerequisites📋
 
