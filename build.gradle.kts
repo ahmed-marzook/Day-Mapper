@@ -34,6 +34,7 @@ dependencies {
 	implementation("org.liquibase:liquibase-core")
 	implementation("org.jsoup:jsoup:1.18.1")
 	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.2")
+	annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 	annotationProcessor("org.projectlombok:lombok")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")

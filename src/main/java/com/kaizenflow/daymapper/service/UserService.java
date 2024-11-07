@@ -2,6 +2,7 @@ package com.kaizenflow.daymapper.service;
 
 import com.kaizenflow.daymapper.UserAlreadyExistAuthenticationException;
 import com.kaizenflow.daymapper.entities.User;
+import com.kaizenflow.daymapper.mapper.UserMapper;
 import com.kaizenflow.daymapper.model.user.UserCreateRequest;
 import com.kaizenflow.daymapper.model.user.UserCreateResponse;
 import com.kaizenflow.daymapper.repository.UserRepository;
@@ -18,10 +19,14 @@ public class UserService {
 
   private final PasswordEncoder passwordEncoder;
 
+  private final UserMapper userMapper;
+
   @Autowired
-  public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+  public UserService(
+      UserRepository userRepository, PasswordEncoder passwordEncoder, UserMapper userMapper) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
+    this.userMapper = userMapper;
   }
 
   public UserCreateResponse createUser(UserCreateRequest userCreateRequest)
@@ -43,6 +48,6 @@ public class UserService {
     newUser.setPasswordHash(passwordEncoder.encode(userCreateRequest.password()));
 
     User savedUser = userRepository.save(newUser);
-    return null;
+    return userMapper.userToUserCreateResponse(savedUser);
   }
 }
