@@ -21,7 +21,7 @@ CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL,
     title VARCHAR(100) NOT NULL,
-    description TEXT,
+    description VARCHAR(500),
     status VARCHAR(20),
     due_date TIMESTAMP WITH TIME ZONE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,

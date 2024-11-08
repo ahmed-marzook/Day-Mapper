@@ -1,6 +1,6 @@
 package com.kaizenflow.daymapper.controller;
 
-import com.kaizenflow.daymapper.UserAlreadyExistAuthenticationException;
+import com.kaizenflow.daymapper.exception.UserAlreadyExistAuthenticationException;
 import com.kaizenflow.daymapper.model.user.UserCreateRequest;
 import com.kaizenflow.daymapper.model.user.UserCreateResponse;
 import com.kaizenflow.daymapper.service.UserService;

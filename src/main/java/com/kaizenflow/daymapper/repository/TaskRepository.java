@@ -4,6 +4,7 @@ import com.kaizenflow.daymapper.entities.Task;
 import com.kaizenflow.daymapper.entities.User;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
@@ -16,4 +17,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
   List<Task> findByUserAndDueDateBefore(User user, ZonedDateTime date);
 
   List<Task> findByUserAndDueDateBetween(User user, ZonedDateTime start, ZonedDateTime end);
+
+  Optional<Task> findByTaskIdAndUser(Long taskId, User user);
 }

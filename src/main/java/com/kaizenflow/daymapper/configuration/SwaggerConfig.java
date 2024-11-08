@@ -19,24 +19,23 @@ public class SwaggerConfig {
                 .title("Day Mapper API")
                 .version("V1")
                 .description("API documentation for Day Mapper Todo Application"))
-            .components(
-                    new Components()
-                            .addSecuritySchemes(
-                                    "basicAuth",
-                                    new SecurityScheme()
-                                            .type(SecurityScheme.Type.HTTP)
-                                            .scheme("basic")
-                                            .description("""
+        .components(
+            new Components()
+                .addSecuritySchemes(
+                    "basicAuth",
+                    new SecurityScheme()
+                        .type(SecurityScheme.Type.HTTP)
+                        .scheme("basic")
+                        .description(
+                            """
                                 Basic Authentication:
                                 - Email: Your registered email address
                                 - Password: Your account password
-                                
+
                                 Example:
                                 Email: user@example.com
                                 Password: yourpassword
-                                """)
-                            )
-            )
+                                """)))
         .addSecurityItem(new SecurityRequirement().addList("basicAuth"));
   }
 }

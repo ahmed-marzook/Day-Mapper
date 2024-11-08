@@ -1,4 +1,4 @@
-package com.kaizenflow.daymapper;
+package com.kaizenflow.daymapper.exception;
 
 import javax.naming.AuthenticationException;
 

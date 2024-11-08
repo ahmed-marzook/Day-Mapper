@@ -1,6 +1,6 @@
 package com.kaizenflow.daymapper.controller;
 
-import com.kaizenflow.daymapper.UserAlreadyExistAuthenticationException;
+import com.kaizenflow.daymapper.exception.UserAlreadyExistAuthenticationException;
 import com.kaizenflow.daymapper.model.ApiError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

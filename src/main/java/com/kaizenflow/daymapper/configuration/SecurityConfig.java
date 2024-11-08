@@ -1,7 +1,5 @@
 package com.kaizenflow.daymapper.configuration;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
 import com.kaizenflow.daymapper.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -44,13 +42,8 @@ public class SecurityConfig {
                     .authenticated()
                     .anyRequest()
                     .authenticated())
-        .httpBasic(basic -> basic
-                .realmName("Todo API") )
-            .formLogin(form -> form
-                    .usernameParameter("email")
-                    .passwordParameter("password")
-                    .disable()
-            )
+        .httpBasic(basic -> basic.realmName("Todo API"))
+        .formLogin(form -> form.usernameParameter("email").passwordParameter("password").disable())
         .sessionManagement(
             session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider());
