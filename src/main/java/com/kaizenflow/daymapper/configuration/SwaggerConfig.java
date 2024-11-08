@@ -3,7 +3,6 @@ package com.kaizenflow.daymapper.configuration;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +34,6 @@ public class SwaggerConfig {
                                 Example:
                                 Email: user@example.com
                                 Password: yourpassword
-                                """)))
-        .addSecurityItem(new SecurityRequirement().addList("basicAuth"));
+                                """)));
   }
 }

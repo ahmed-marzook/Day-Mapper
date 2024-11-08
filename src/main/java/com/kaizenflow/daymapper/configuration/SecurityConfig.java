@@ -43,7 +43,6 @@ public class SecurityConfig {
                     .anyRequest()
                     .authenticated())
         .httpBasic(basic -> basic.realmName("Todo API"))
-        .formLogin(form -> form.usernameParameter("email").passwordParameter("password").disable())
         .sessionManagement(
             session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider());

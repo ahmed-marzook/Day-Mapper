@@ -30,6 +30,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+	implementation("org.apache.commons:commons-lang3:3.17.0")
 	implementation("org.mapstruct:mapstruct:1.6.2")
 	implementation("org.liquibase:liquibase-core")
 	implementation("org.jsoup:jsoup:1.18.1")

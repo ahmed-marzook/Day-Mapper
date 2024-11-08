@@ -13,7 +13,9 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -63,7 +65,7 @@ public class TaskService {
   public TaskResponse updateTask(
       @NotNull Long taskId,
       @Valid
-          TaskUpdateRequest request, // Keep @Valid here as service might be called from elsewhere
+          TaskUpdateRequest request,
       @NotBlank String username)
       throws ResourceNotFoundException {
 
@@ -74,10 +76,21 @@ public class TaskService {
             .findByTaskIdAndUser(taskId, user)
             .orElseThrow(() -> new ResourceNotFoundException("Task not found"));
 
-    task.setTitle(request.title());
-    task.setDescription(request.description());
-    task.setStatus(request.status());
-    task.setDueDate(request.dueDate());
+    if (StringUtils.isNotBlank(request.title())) {
+      task.setTitle(request.title());
+    }
+
+    if (Objects.nonNull(request.status())) {
+      task.setStatus(request.status());
+    }
+
+    if (Objects.nonNull(request.description())) {
+      task.setDescription(request.description());
+    }
+
+    if (Objects.nonNull(request.dueDate())) {
+      task.setDueDate(request.dueDate());
+    }
 
     Task updatedTask = taskRepository.save(task);
     return taskMapper.taskToTaskResponse(updatedTask);

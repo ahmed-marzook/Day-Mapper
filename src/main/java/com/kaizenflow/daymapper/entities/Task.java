@@ -17,6 +17,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
@@ -47,9 +49,11 @@ public class Task {
   @Column(name = "due_date")
   private ZonedDateTime dueDate;
 
+  @CreationTimestamp
   @Column(name = "created_at", nullable = false)
   private ZonedDateTime createdAt;
 
+  @UpdateTimestamp
   @Column(name = "updated_at", nullable = false)
   private ZonedDateTime updatedAt;
 }
