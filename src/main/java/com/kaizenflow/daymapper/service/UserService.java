@@ -33,7 +33,7 @@ public class UserService {
       throws UserAlreadyExistAuthenticationException {
     Objects.requireNonNull(userCreateRequest, "User Create Request cannot be null");
     if (userRepository.existsByUsername(userCreateRequest.userName())) {
-      throw new UserAlreadyExistAuthenticationException("User Name already exists.");
+      throw new UserAlreadyExistAuthenticationException("Username already exists.");
     }
     if (userRepository.existsByEmail(userCreateRequest.email())) {
       throw new UserAlreadyExistAuthenticationException("Email already exists.");
