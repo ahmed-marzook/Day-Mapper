@@ -1,6 +1,8 @@
 package com.kaizenflow.daymapper.entities;
 
+import com.kaizenflow.daymapper.enums.TaskStatus;
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -39,7 +41,8 @@ public class Task {
   private String description;
 
   @Column(nullable = false)
-  private String status;
+  @Convert(converter = TaskStatus.Converter.class)
+  private TaskStatus status;
 
   @Column(name = "due_date")
   private ZonedDateTime dueDate;
